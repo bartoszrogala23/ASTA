@@ -26,6 +26,10 @@ public class AstaBasePage {
         driver.findElement(By.cssSelector(".col-md-6 [href='/task_1'] h2")).click();
     }
 
+    public void goToTaskTwoSite() {
+        driver.get("https://testingcup.pgs-soft.com/task_2");
+    }
+
     public void goToTaskOneManually() {
         driver.get("https://testingcup.pgs-soft.com/task_1");
     }

@@ -1,6 +1,5 @@
 package com.bartosz.asta.regularapp;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,19 +17,26 @@ public class TaskOneSite {
     private WebElement resetData;
 
     @FindBy(css = "[data-product-name='Okulary']")
-    private WebElement addProductButton;
+    private WebElement glassesAddButton;
 
     // context search - pay attention to new syntax in css
     @FindBy(xpath = "//div[contains(@class, 'input-group') and .//*[@data-product-name='Okulary']]//input")
-    private WebElement addQuantity;
+    private WebElement glassesAddQuantity;
+
+    @FindBy(css = "[data-product-name='Piłka']")
+    private WebElement ballAddButton;
+
+    @FindBy(xpath = "//div[contains(@class, 'input-group') and .//*[@data-product-name='Piłka']]//input")
+    private WebElement ballAddQuantity;
 
     @FindBy(css = ".basket-summary")
     public WebElement basketSummary;
 
     public void addGlassesToCart() {
         resetData.click();
-        addQuantity.click();
-        addQuantity.sendKeys("1");
-        addProductButton.click();
+        glassesAddQuantity.click();
+        glassesAddQuantity.clear();
+        glassesAddQuantity.sendKeys("1");
+        glassesAddButton.click();
     }
 }
