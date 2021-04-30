@@ -1,5 +1,6 @@
 package com.bartosz.asta.regularapp;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,7 +15,7 @@ public class AstaBasePage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = ".col-md-6 [href='/task_1']")
+    @FindBy(css = ".col-md-6 [href='/task_1'] h2")
     private WebElement taskOneButton;
 
     @FindBy(xpath = "//h2[contains(text(),'2')]")
@@ -22,7 +23,11 @@ public class AstaBasePage {
 
 
     public void goToTaskOne() {
-        taskOneButton.click();
+        driver.findElement(By.cssSelector(".col-md-6 [href='/task_1'] h2")).click();
+    }
+
+    public void goToTaskOneManually() {
+        driver.get("https://testingcup.pgs-soft.com/task_1");
     }
 
     public void goToTaskTwo() {
