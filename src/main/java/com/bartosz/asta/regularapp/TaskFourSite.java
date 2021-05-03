@@ -45,6 +45,19 @@ public class TaskFourSite {
         driver.switchTo().frame(0);
     }
 
+    public  void switchWindow() {
+        String winHandleBefore = driver.getWindowHandle();
+        applyButton.click();
+        for(String winHandle : driver.getWindowHandles()){
+            driver.switchTo().window(winHandle);
+        }
+        Faker faker = new Faker();
+        fullNameField.sendKeys(faker.name().fullName());
+        emailField.sendKeys(faker.internet().emailAddress());
+        phoneField.sendKeys("100-200-300");
+        saveButton.click();
+    }
+
     public void fillTheForm() {
         Faker faker = new Faker();
         fullNameField.sendKeys(faker.name().fullName());

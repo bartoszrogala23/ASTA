@@ -9,7 +9,7 @@ public class TaskFourTest extends AstaBaseTest {
     public void applyForTheJon() {
         astaBasePage.goToTaskFourSite();
         taskFourSite.goToApplyForm();
-        taskFourSite.switchToFrame();
+        taskFourSite.switchWindow();
         taskFourSite.fillTheForm();
     }
 }
