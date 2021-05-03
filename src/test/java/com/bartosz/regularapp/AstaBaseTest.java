@@ -1,8 +1,6 @@
 package com.bartosz.regularapp;
 
-import com.bartosz.asta.regularapp.AstaBasePage;
-import com.bartosz.asta.regularapp.TaskOneSite;
-import com.bartosz.asta.regularapp.TaskTwoSite;
+import com.bartosz.asta.regularapp.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,6 +12,8 @@ public class AstaBaseTest {
     protected AstaBasePage astaBasePage;
     protected TaskOneSite taskOneSite;
     protected TaskTwoSite taskTwoSite;
+    protected TaskeThreeSite taskeThreeSite;
+    protected TaskFourSite taskFourSite;
 
     @BeforeMethod
     public void setup() {
@@ -24,5 +24,7 @@ public class AstaBaseTest {
         astaBasePage = new AstaBasePage(driver);
         taskOneSite = new TaskOneSite(driver);
         taskTwoSite = new TaskTwoSite(driver);
+        taskeThreeSite = new TaskeThreeSite(driver);
+        taskFourSite = new TaskFourSite(driver);
     }
 }

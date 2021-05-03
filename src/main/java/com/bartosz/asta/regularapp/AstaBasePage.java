@@ -34,6 +34,15 @@ public class AstaBasePage {
         driver.get("https://testingcup.pgs-soft.com/task_1");
     }
 
+    public void goToTaskThreeSite() {
+        driver.get("https://testingcup.pgs-soft.com/task_3");
+    }
+
+    public void goToTaskFourSite() {
+        driver.get("https://testingcup.pgs-soft.com/task_4");
+    }
+
+
     public void goToTaskTwo() {
         taskTwoButton.click();
     }
