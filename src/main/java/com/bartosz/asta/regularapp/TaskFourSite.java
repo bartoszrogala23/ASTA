@@ -36,13 +36,17 @@ public class TaskFourSite {
     private WebElement iFrame;
 
 
+
     public void goToApplyForm() {
         applyButton.click();
     }
 
+    public void switchToFrame() {
+        driver.switchTo().frame(0);
+    }
+
     public void fillTheForm() {
         Faker faker = new Faker();
-        driver.switchTo().frame(iFrame);
         fullNameField.sendKeys(faker.name().fullName());
         emailField.sendKeys(faker.internet().emailAddress());
         phoneField.sendKeys("100-200-300");
